@@ -10,7 +10,6 @@ Author: Leonardo Celente
  - C++20
  - Conan Package Manager
     - fmt
-    - spdlog
     - catch2
     - ctre
     - cxxopts
@@ -20,7 +19,6 @@ Author: Leonardo Celente
 ```bash
 mkdir build
 cd build
-conan install ..
 cmake .. 
 cmake --build . --config Debug
 ```
