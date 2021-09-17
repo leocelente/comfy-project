@@ -18,16 +18,16 @@ jobs:
         conan --version
         cmake --version
 
-    - name: "Run Build"
+    - name: "Build Project"
       run: |
         mkdir build
         cd build
-        cmake ..
+        cmake .. -DCMAKE_BUILD_TYPE=Debug
         cmake --build . --config Debug --target my_project
         
-    - name: "Run tests" 
+    - name: "Run Tests" 
       run: |
         cd build
-        cmake ..
+        cmake .. -DCMAKE_BUILD_TYPE=Release
         cmake --build . --config Release --target my_project-tests
         ./bin/my_project-tests
