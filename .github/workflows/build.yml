@@ -22,15 +22,12 @@ jobs:
       run: |
         mkdir build
         cd build
-        conan install ..
         cmake ..
-        cmake --build . --config Release --target my_project
-        ./bin/my_project
+        cmake --build . --config Debug --target my_project
         
     - name: "Run tests" 
       run: |
         cd build
-        conan install ..
         cmake ..
-        cmake --build . --config Debug --target my_project-tests
+        cmake --build . --config Release --target my_project-tests
         ./bin/my_project-tests
